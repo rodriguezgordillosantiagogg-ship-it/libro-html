@@ -75,12 +75,13 @@ body {
   max-width: 80%;
 }
 
-/* IMAGEN SUPERPUESTA */
+/* IMAGEN SUPERPUESTA CENTRADA */
 .imagen-superpuesta {
   position: absolute;
   z-index: 2;
-  bottom: 20px;
-  right: 20px;
-  width: 150px; /* tamaño ajustado */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px; /* tamaño ajustado */
   height: auto;
 }
