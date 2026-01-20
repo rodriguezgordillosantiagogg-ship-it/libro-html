@@ -25,32 +25,39 @@ $(document).ready(function () {
     autoCenter: true
   });
 
-  // Redimensionar
+  // Ajustar tamaño al cambiar pantalla
   $(window).on("resize", function () {
     let size = tamañoLibro();
     $("#book").turn("size", size.width, size.height);
   });
 
-  // Botones
-  $("#next").on("click touchstart", function (e) {
-    e.preventDefault();
-    $("#book").turn("next");
-  });
+  /* =========================
+     PASAR PÁGINA CON CLIC
+     ========================= */
+  $("#book").on("click", function (e) {
+    let x = e.pageX;
+    let mitad = $(window).width() / 2;
 
-  $("#prev").on("click touchstart", function (e) {
-    e.preventDefault();
-    $("#book").turn("previous");
-  });
-
-  // Música (se activa al primer toque/click)
-  let musica = document.getElementById("musica");
-  let iniciada = false;
-
-  document.body.addEventListener("click", function () {
-    if (!iniciada) {
-      musica.play().catch(() => {});
-      iniciada = true;
+    if (x > mitad) {
+      $("#book").turn("next");
+    } else {
+      $("#book").turn("previous");
     }
-  }, { once: true });
+  });
+
+  /* =========================
+     ACTIVAR MÚSICA (FIJO)
+     ========================= */
+  let musica = document.getElementById("musica");
+  musica.volume = 0.7;
+
+  function iniciarMusica() {
+    musica.play().catch(() => {});
+    document.removeEventListener("click", iniciarMusica);
+    document.removeEventListener("touchstart", iniciarMusica);
+  }
+
+  document.addEventListener("click", iniciarMusica);
+  document.addEventListener("touchstart", iniciarMusica);
 
 });
