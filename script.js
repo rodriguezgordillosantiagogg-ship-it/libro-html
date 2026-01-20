@@ -1,9 +1,9 @@
-console.log("JS cargado");
-
 $(document).ready(function () {
+
   $("#book").turn({
-    width: 800,
-    height: 500,
+    width: $("#book").width(),
+    height: $("#book").height(),
     autoCenter: true
   });
+
 });
