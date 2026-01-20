@@ -1,15 +1,9 @@
-body {
-  margin: 0;
-  height: 100vh;
-  background: #111;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: Arial, sans-serif;
-}
+const audio = document.getElementById("audio");
 
-.mensaje {
-  font-size: 18px;
-  opacity: 0.8;
-}
+document.addEventListener("click", () => {
+  audio.play().then(() => {
+    console.log("🎵 Música reproduciéndose");
+  }).catch(err => {
+    console.error("❌ Error al reproducir:", err);
+  });
+}, { once: true });
