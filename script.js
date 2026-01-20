@@ -5,8 +5,7 @@ $(window).on("load", function () {
   book.turn({
     width: 800,
     height: 500,
-    autoCenter: true,
-    display: "double"
+    autoCenter: true
   });
 
   $("#next").on("click", function () {
