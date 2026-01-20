@@ -1,4 +1,4 @@
-$(window).on('load', function () {
+$(window).on("load", function () {
 
   const book = $("#book");
 
@@ -8,5 +8,12 @@ $(window).on('load', function () {
     autoCenter: true
   });
 
-});
+  $("#next").click(function () {
+    book.turn("next");
+  });
 
+  $("#prev").click(function () {
+    book.turn("previous");
+  });
+
+});
