@@ -5,7 +5,7 @@ body {
   overflow: hidden;
 }
 
-/* ===== ACTIVADOR AUDIO ===== */
+/* ACTIVADOR AUDIO */
 #activar {
   position: fixed;
   inset: 0;
@@ -21,28 +21,7 @@ body {
   font-size: 20px;
 }
 
-/* ===== DISCO ===== */
-.disco {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  width: 120px;
-  height: 120px;
-  background: url("disco.jpg") center/cover no-repeat;
-  border-radius: 50%;
-  z-index: 5;
-}
-
-.girando {
-  animation: girar 3s linear infinite;
-}
-
-@keyframes girar {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-
-/* ===== LIBRO ===== */
+/* LIBRO */
 #book {
   width: 320px;
   height: 480px;
