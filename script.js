@@ -1,25 +1,42 @@
-const audio = document.getElementById("audio");
-const activar = document.getElementById("activar");
+function tamañoLibro() {
+  let anchoPantalla = window.innerWidth;
+  let altoPantalla = window.innerHeight;
 
-activar.addEventListener("click", () => {
-  audio.play().then(() => {
-    activar.style.display = "none";
-    activar.style.pointerEvents = "none"; // ← CLAVE PARA PASAR PÁGINAS
-  }).catch(err => {
-    console.error("Audio bloqueado:", err);
-  });
-}, { once: true });
+  let anchoLibro, altoLibro;
 
-$(window).on("load", function () {
+  if (anchoPantalla < 768) {
+    // Celular
+    anchoLibro = anchoPantalla * 0.9;
+    altoLibro = altoPantalla * 0.7;
+  } else {
+    // PC
+    anchoLibro = 800;
+    altoLibro = 500;
+  }
 
-  const ancho = Math.min(window.innerWidth * 0.9, 400);
-  const alto  = ancho * 1.4;
+  return { width: anchoLibro, height: altoLibro };
+}
+
+$(document).ready(function () {
+
+  let size = tamañoLibro();
 
   $("#book").turn({
-    width: ancho,
-    height: alto,
+    width: size.width,
+    height: size.height,
     autoCenter: true
   });
 
-});
+  // Recalcular al cambiar tamaño (rotar móvil, etc.)
+  $(window).on("resize", function () {
+    let size = tamañoLibro();
+    $("#book").turn("size", size.width, size.height);
+  });
 
+  // Activar música
+  $("#activar").on("click touchstart", function () {
+    document.getElementById("musica").play();
+    $(this).fadeOut();
+  });
+
+});
