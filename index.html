@@ -2,20 +2,21 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Libro interactivo</title>
+  <title>Flipbook Interactivo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Fuente Baloo 2 desde Google Fonts -->
+  <!-- Fuente Baloo 2 -->
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 
+  <!-- jQuery y Turn.js desde CDN confiable -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="turn.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.min.js"></script>
 </head>
 <body>
 
-  <!-- ACTIVAR AUDIO -->
+  <!-- Pantalla de activación -->
   <div id="activar">
     <div class="mensaje">Toca una vez la pantalla para comenzar 🎶</div>
   </div>
@@ -23,7 +24,7 @@
   <!-- Audio -->
   <audio id="musica" src="musica.mp3" loop></audio>
 
-  <!-- Libro -->
+  <!-- Flipbook -->
   <div id="book">
     <!-- Portada -->
     <div class="page portada">
@@ -58,15 +59,15 @@
       </div>
     </div>
 
-    <!-- Página 5: frase final enfocada -->
+    <!-- Página 5 -->
     <div class="page">
       <img src="pagina4.jpg" alt="Página 4">
       <div class="frase-central">
-        <span class="enfasis">Te volviste el caos entre tanta monotonía</span>
+        <span class="enfasis">Te volviste caos entre tanta monotonía</span>
       </div>
     </div>
 
-    <!-- Página 6: sticker centrado exacto -->
+    <!-- Página 6 -->
     <div class="page">
       <img src="pagina5.jpg" alt="Página 5">
       <img src="imagen-superpuesta.jpg" alt="Sticker" class="imagen-superpuesta">
