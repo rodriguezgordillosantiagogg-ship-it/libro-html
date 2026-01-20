@@ -1,20 +1,18 @@
 function tamañoLibro() {
-  let anchoPantalla = window.innerWidth;
-  let altoPantalla = window.innerHeight;
+  let w = window.innerWidth;
+  let h = window.innerHeight;
 
-  let anchoLibro, altoLibro;
-
-  if (anchoPantalla < 768) {
-    // Celular
-    anchoLibro = anchoPantalla * 0.9;
-    altoLibro = altoPantalla * 0.7;
+  if (w < 768) {
+    return {
+      width: w * 0.9,
+      height: h * 0.65
+    };
   } else {
-    // PC
-    anchoLibro = 800;
-    altoLibro = 500;
+    return {
+      width: 800,
+      height: 500
+    };
   }
-
-  return { width: anchoLibro, height: altoLibro };
 }
 
 $(document).ready(function () {
@@ -27,16 +25,32 @@ $(document).ready(function () {
     autoCenter: true
   });
 
-  // Recalcular al cambiar tamaño (rotar móvil, etc.)
+  // Redimensionar
   $(window).on("resize", function () {
     let size = tamañoLibro();
     $("#book").turn("size", size.width, size.height);
   });
 
-  // Activar música
-  $("#activar").on("click touchstart", function () {
-    document.getElementById("musica").play();
-    $(this).fadeOut();
+  // Botones
+  $("#next").on("click touchstart", function (e) {
+    e.preventDefault();
+    $("#book").turn("next");
   });
+
+  $("#prev").on("click touchstart", function (e) {
+    e.preventDefault();
+    $("#book").turn("previous");
+  });
+
+  // Música (se activa al primer toque/click)
+  let musica = document.getElementById("musica");
+  let iniciada = false;
+
+  document.body.addEventListener("click", function () {
+    if (!iniciada) {
+      musica.play().catch(() => {});
+      iniciada = true;
+    }
+  }, { once: true });
 
 });
