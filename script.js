@@ -2,11 +2,13 @@ const audio = document.getElementById("audio");
 const activar = document.getElementById("activar");
 
 activar.addEventListener("click", () => {
-  audio.play().then(() => {
-    activar.remove();
-  }).catch(err => {
-    console.error("Audio bloqueado:", err);
-  });
+  audio.play()
+    .then(() => {
+      activar.style.display = "none"; // ← CLAVE
+    })
+    .catch(err => {
+      console.error("Audio bloqueado:", err);
+    });
 }, { once: true });
 
 $(window).on("load", function () {
@@ -15,6 +17,4 @@ $(window).on("load", function () {
     height: 480,
     autoCenter: true
   });
-});
-
 });
