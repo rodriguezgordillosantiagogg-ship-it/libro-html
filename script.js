@@ -4,8 +4,8 @@ function configLibro() {
 
   if (w < 768) {
     return {
-      width: w * 0.95,
-      height: h * 0.9,   // ocupa casi toda la pantalla en móviles
+      width: w,       // ancho completo del móvil
+      height: h,      // alto completo del móvil
       display: "single"  // en móviles se ve una sola página
     };
   } else {
