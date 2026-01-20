@@ -60,23 +60,39 @@ body {
   object-fit: cover;
 }
 
-/* FRASE CENTRAL EN GRANDE Y MÁS ARRIBA */
+/* TEXTO EN PÁGINAS 2, 3, 4 */
+.texto-superpuesto {
+  position: absolute;
+  z-index: 2;
+  top: 10%;
+  left: 8%;
+  right: 8%;
+  color: black;
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: justify;
+  font-family: 'Baloo 2', sans-serif;
+}
+
+/* FRASE FINAL EN PÁGINA 5 */
 .frase-central {
   position: absolute;
   z-index: 2;
-  top: 25%;
+  top: 40%;
   left: 50%;
-  transform: translate(-50%, -25%);
-  font-size: 36px;
-  font-weight: 600;
-  color: black;
+  transform: translate(-50%, -40%);
   text-align: center;
-  padding: 20px;
   max-width: 80%;
-  line-height: 1.2;
 }
 
-/* IMAGEN SUPERPUESTA CENTRADA */
+.enfasis {
+  font-size: 36px;
+  font-weight: bold;
+  color: #2c3e50;
+  font-family: 'Baloo 2', sans-serif;
+}
+
+/* STICKER EN PÁGINA 6 */
 .imagen-superpuesta {
   position: absolute;
   z-index: 2;
