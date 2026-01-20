@@ -1,53 +1,26 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Libro interactivo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="stylesheet" href="style.css">
-
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="turn.min.js"></script>
-</head>
-<body>
-
-  <!-- ACTIVAR AUDIO -->
-  <div id="activar">
-    <div class="mensaje">Toca una vez la pantalla para comenzar 🎶</div>
+<div id="book">
+  <!-- Portada -->
+  <div class="page portada">
+    <img src="portada.jpg" alt="Portada">
   </div>
 
-  <!-- Audio -->
-  <audio id="musica" src="musica.mp3" loop></audio>
-
-  <!-- Libro -->
-  <div id="book">
-    <!-- Portada -->
-    <div class="page portada">
-      <img src="portada.jpg" alt="Portada">
-    </div>
-
-    <!-- Páginas con imágenes -->
-    <div class="page">
-      <img src="pagina1.jpg" alt="Página 1" style="width:100%; height:100%; object-fit:cover;">
-    </div>
-    <div class="page">
-      <img src="pagina2.jpg" alt="Página 2" style="width:100%; height:100%; object-fit:cover;">
-    </div>
-    <div class="page">
-      <img src="pagina3.jpg" alt="Página 3" style="width:100%; height:100%; object-fit:cover;">
-    </div>
-    <div class="page">
-      <img src="pagina4.jpg" alt="Página 4" style="width:100%; height:100%; object-fit:cover;">
-    </div>
-    <div class="page">
-      <img src="pagina5.jpg" alt="Página 5" style="width:100%; height:100%; object-fit:cover;">
-    </div>
-    <div class="page">
-      <img src="pagina6.jpg" alt="Página 6" style="width:100%; height:100%; object-fit:cover;">
-    </div>
+  <!-- Páginas con imágenes PNG -->
+  <div class="page">
+    <img src="pagina1.png" alt="Página 1" style="width:100%; height:100%; object-fit:cover;">
   </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
+  <div class="page">
+    <img src="pagina2.png" alt="Página 2" style="width:100%; height:100%; object-fit:cover;">
+  </div>
+  <div class="page">
+    <img src="pagina3.png" alt="Página 3" style="width:100%; height:100%; object-fit:cover;">
+  </div>
+  <div class="page">
+    <img src="pagina4.png" alt="Página 4" style="width:100%; height:100%; object-fit:cover;">
+  </div>
+  <div class="page">
+    <img src="pagina5.png" alt="Página 5" style="width:100%; height:100%; object-fit:cover;">
+  </div>
+  <div class="page">
+    <img src="pagina6.png" alt="Página 6" style="width:100%; height:100%; object-fit:cover;">
+  </div>
+</div>
