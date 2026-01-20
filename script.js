@@ -4,21 +4,20 @@ function configLibro() {
 
   if (w < 768) {
     return {
-      width: w,       // ancho completo del móvil
-      height: h,      // alto completo del móvil
-      display: "single"  // en móviles se ve una sola página
+      width: w,
+      height: h,
+      display: "single"
     };
   } else {
     return {
       width: 900,
       height: 550,
-      display: "double"  // en PC se ven dos páginas
+      display: "double"
     };
   }
 }
 
 $(document).ready(function () {
-
   let cfg = configLibro();
 
   $("#book").turn({
@@ -34,7 +33,6 @@ $(document).ready(function () {
     $("#book").turn("size", cfg.width, cfg.height);
   });
 
-  // CLIC IZQ / DER
   $("#book").on("click touchstart", function (e) {
     let x = e.pageX || e.originalEvent.touches[0].pageX;
     let mitad = window.innerWidth / 2;
@@ -46,12 +44,10 @@ $(document).ready(function () {
     }
   });
 
-  // ACTIVAR MÚSICA
   $("#activar").on("click touchstart", function () {
     let musica = document.getElementById("musica");
     musica.volume = 0.7;
     musica.play();
     $(this).fadeOut();
   });
-
 });
