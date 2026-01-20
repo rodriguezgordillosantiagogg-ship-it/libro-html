@@ -6,12 +6,13 @@ body {
   margin: 0;
   background: #e5e5e5;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  font-family: Arial, sans-serif;
 }
 
-/* CONTENEDOR DEL LIBRO */
 #book {
   width: 90vw;
   max-width: 800px;
@@ -19,7 +20,6 @@ body {
   max-height: 500px;
 }
 
-/* CADA PÁGINA */
 .page {
   background: white;
   border: 1px solid #ccc;
@@ -28,3 +28,14 @@ body {
   align-items: center;
   font-size: 2em;
 }
+
+.controls {
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
