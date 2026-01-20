@@ -2,21 +2,20 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Flipbook Interactivo</title>
+  <title>Libro interactivo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Fuente Baloo 2 -->
+  <!-- Fuente Baloo 2 desde Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 
-  <!-- jQuery y Turn.js desde CDN confiable -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.min.js"></script>
+  <script src="turn.min.js"></script>
 </head>
 <body>
 
-  <!-- Pantalla de activación -->
+  <!-- ACTIVAR AUDIO -->
   <div id="activar">
     <div class="mensaje">Toca una vez la pantalla para comenzar 🎶</div>
   </div>
@@ -24,7 +23,7 @@
   <!-- Audio -->
   <audio id="musica" src="musica.mp3" loop></audio>
 
-  <!-- Flipbook -->
+  <!-- Libro -->
   <div id="book">
     <!-- Portada -->
     <div class="page portada">
@@ -35,8 +34,7 @@
     <div class="page">
       <img src="pagina1.jpg" alt="Página 1">
       <div class="texto-superpuesto">
-        Podría decir muchas cosas, que esto, que aquello, que lo otro, 
-        pero creo que realmente no hay manera correcta de definir lo que significas para mí.
+        Podría decir muchas cosas, que esto, que aquello, que lo otro, pero creo que realmente no hay manera correcta de definir lo que significas para mí.
       </div>
     </div>
 
@@ -44,9 +42,7 @@
     <div class="page">
       <img src="pagina2.jpg" alt="Página 2">
       <div class="texto-superpuesto">
-        Lo cual es chistoso, porque aunque parece poco tiempo 
-        (fue quizá hace medio año, tal vez más, tal vez menos que "empezó"), 
-        siempre es curioso cuando aun sin esperar nada, terminas queriendo todo, ¿no?
+        Lo cual es chistoso, porque aunque parece poco tiempo (fue quizá hace medio año, tal vez más, tal vez menos que "empezó"), siempre es curioso cuando aun sin esperar nada, terminas queriendo todo, ¿no?
       </div>
     </div>
 
@@ -54,12 +50,11 @@
     <div class="page">
       <img src="pagina3.jpg" alt="Página 3">
       <div class="texto-superpuesto">
-        Cuando incluso por cosas tan simples terminé queriendo verte sonreír, 
-        y sin saberlo, y tal vez sin siquiera necesitarlo,
+        Cuando incluso por cosas tan simples terminé queriendo verte sonreír, y sin saberlo, y tal vez sin siquiera necesitarlo,
       </div>
     </div>
 
-    <!-- Página 5 -->
+    <!-- Página 5: frase final enfocada -->
     <div class="page">
       <img src="pagina4.jpg" alt="Página 4">
       <div class="frase-central">
@@ -67,7 +62,7 @@
       </div>
     </div>
 
-    <!-- Página 6 -->
+    <!-- Página 6: sticker centrado -->
     <div class="page">
       <img src="pagina5.jpg" alt="Página 5">
       <img src="imagen-superpuesta.jpg" alt="Sticker" class="imagen-superpuesta">
