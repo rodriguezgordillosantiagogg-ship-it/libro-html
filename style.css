@@ -23,9 +23,13 @@ body {
   max-width: 800px;
   height: 60vh;
   max-height: 500px;
+  position: relative;
 }
 
 .page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
   background: white;
   border: 1px solid #ccc;
   padding: 20px;
@@ -34,12 +38,4 @@ body {
   justify-content: center;
   align-items: center;
 }
-#book {
-  position: relative;
-}
 
-.page {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
