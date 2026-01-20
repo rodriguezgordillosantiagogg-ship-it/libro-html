@@ -4,15 +4,15 @@ function configLibro() {
 
   if (w < 768) {
     return {
-      width: w * 0.9,
-      height: h * 0.7,
-      display: "single" // en móviles se ve una sola página
+      width: w * 0.95,
+      height: h * 0.9,   // ocupa casi toda la pantalla en móviles
+      display: "single"  // en móviles se ve una sola página
     };
   } else {
     return {
       width: 900,
       height: 550,
-      display: "double" // en PC se ven dos páginas
+      display: "double"  // en PC se ven dos páginas
     };
   }
 }
