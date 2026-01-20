@@ -1,1 +1,36 @@
-/* estilos */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #e6e6e6;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#book {
+  width: 90vw;
+  max-width: 800px;
+  height: 60vh;
+  max-height: 500px;
+}
+
+.page {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 20px;
+  font-size: clamp(16px, 2.5vw, 22px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
