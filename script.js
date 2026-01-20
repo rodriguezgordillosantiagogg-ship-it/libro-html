@@ -3,16 +3,17 @@ $(window).on("load", function () {
   const book = $("#book");
 
   book.turn({
-    width: book.width(),
-    height: book.height(),
-    autoCenter: true
+    width: 800,
+    height: 500,
+    autoCenter: true,
+    display: "double"
   });
 
-  $("#next").click(function () {
+  $("#next").on("click", function () {
     book.turn("next");
   });
 
-  $("#prev").click(function () {
+  $("#prev").on("click", function () {
     book.turn("previous");
   });
 
