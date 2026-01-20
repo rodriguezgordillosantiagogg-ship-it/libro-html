@@ -1,104 +1,53 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+function configLibro() {
+  let w = window.innerWidth;
+  let h = window.innerHeight;
+
+  if (w < 768) {
+    return {
+      width: w,
+      height: h,
+      display: "single"
+    };
+  } else {
+    return {
+      width: 900,
+      height: 550,
+      display: "double"
+    };
+  }
 }
 
-body {
-  background: #e6e6e6;
-  font-family: 'Baloo 2', sans-serif;
-  overflow: hidden;
-}
+$(document).ready(function () {
+  let cfg = configLibro();
 
-/* ACTIVAR AUDIO */
-#activar {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.9);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
+  $("#book").turn({
+    width: cfg.width,
+    height: cfg.height,
+    display: cfg.display,
+    autoCenter: true
+  });
 
-.mensaje {
-  color: white;
-  font-size: 20px;
-  text-align: center;
-  padding: 20px;
-}
+  $(window).on("resize", function () {
+    let cfg = configLibro();
+    $("#book").turn("display", cfg.display);
+    $("#book").turn("size", cfg.width, cfg.height);
+  });
 
-/* LIBRO */
-#book {
-  margin: auto;
-  width: 100%;
-  max-width: 900px;
-  height: 550px;
-}
+  $("#book").on("click touchstart", function (e) {
+    let x = e.pageX || e.originalEvent.touches[0].pageX;
+    let mitad = window.innerWidth / 2;
 
-/* PÁGINAS */
-.page {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background: white;
-  overflow: hidden;
-}
+    if (x > mitad) {
+      $("#book").turn("next");
+    } else {
+      $("#book").turn("previous");
+    }
+  });
 
-.page img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  z-index: 1;
-}
-
-/* PORTADA */
-.portada img {
-  object-fit: cover;
-}
-
-/* TEXTO EN PÁGINAS 2, 3, 4 */
-.texto-superpuesto {
-  position: absolute;
-  z-index: 2;
-  top: 10%;
-  left: 8%;
-  right: 8%;
-  color: black;
-  font-size: 18px;
-  line-height: 1.6;
-  text-align: justify;
-  font-family: 'Baloo 2', sans-serif;
-}
-
-/* FRASE FINAL EN PÁGINA 5 */
-.frase-central {
-  position: absolute;
-  z-index: 2;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -40%);
-  text-align: center;
-  max-width: 80%;
-}
-
-.enfasis {
-  font-size: 36px;
-  font-weight: bold;
-  color: #2c3e50;
-  font-family: 'Baloo 2', sans-serif;
-}
-
-/* STICKER EN PÁGINA 6 */
-.imagen-superpuesta {
-  position: absolute;
-  z-index: 2;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 200px;
-  height: auto;
-}
+  $("#activar").on("click touchstart", function () {
+    let musica = document.getElementById("musica");
+    musica.volume = 0.7;
+    musica.play();
+    $(this).fadeOut();
+  });
+});
