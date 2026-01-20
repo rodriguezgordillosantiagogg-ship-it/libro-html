@@ -3,20 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi libro</title>
+  <title>Libro</title>
 
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #ddd;
+    }
+
+    #book {
+      width: 300px;
+      height: 400px;
+    }
+
+    #book div {
+      background: white;
+      border: 1px solid #999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+    }
+  </style>
 </head>
 <body>
 
-<div class="container">
-  <div id="book">
-    <div class="page">Página 1</div>
-    <div class="page">Página 2</div>
-    <div class="page">Página 3</div>
-    <div class="page">Página 4</div>
-  </div>
+<div id="book">
+  <div>Página 1</div>
+  <div>Página 2</div>
+  <div>Página 3</div>
+  <div>Página 4</div>
 </div>
 
-<!-- jQuery (OBLIGATORIO primero) -->
-<script src="https://code.jquery.com/jquer
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Turn.js (VERSIÓN CORRECTA) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.min.js"></script>
+
+<script>
+  $(function () {
+    $("#book").turn();
+  });
+</script>
+
+</body>
+</html>
+
