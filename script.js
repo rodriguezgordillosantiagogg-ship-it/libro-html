@@ -1,17 +1,16 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
-  const pageFlip = new St.PageFlip(
-    document.getElementById("book"),
-    {
-      width: 400,
-      height: 500,
-      size: "fixed",
-      showCover: true,
-      mobileScrollSupport: false
-    }
-  );
+  const book = document.getElementById("book");
 
-  pageFlip.loadFromHTML(document.querySelectorAll(".page"));
+  const pageFlip = new St.PageFlip(book, {
+    width: 400,
+    height: 500,
+    size: "fixed",
+    showCover: true,
+    maxShadowOpacity: 0.5
+  });
+
+  pageFlip.loadFromHTML(book.querySelectorAll(".page"));
 
   document.getElementById("next").onclick = () => pageFlip.flipNext();
   document.getElementById("prev").onclick = () => pageFlip.flipPrev();
