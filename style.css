@@ -34,3 +34,12 @@ body {
   justify-content: center;
   align-items: center;
 }
+#book {
+  position: relative;
+}
+
+.page {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
