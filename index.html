@@ -5,20 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Libro</title>
 
-  <!-- PageFlip CSS (CLAVE) -->
+  <!-- CSS de PageFlip (OBLIGATORIO) -->
   <link rel="stylesheet" href="https://unpkg.com/page-flip/dist/css/page-flip.css">
 
+  <!-- Tu CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <div id="book">
+    <!-- PORTADA -->
+    <div class="page portada">
+      <img src="portada.jpg" alt="Portada del libro">
+    </div>
+
+    <!-- PÁGINAS INTERNAS -->
     <div class="page">Página 1</div>
     <div class="page">Página 2</div>
     <div class="page">Página 3</div>
     <div class="page">Página 4</div>
   </div>
 
+  <!-- BOTONES -->
   <div class="controls">
     <button id="prev">Anterior</button>
     <button id="next">Siguiente</button>
@@ -26,7 +34,10 @@
 
   <!-- PageFlip JS -->
   <script src="https://unpkg.com/page-flip/dist/js/page-flip.browser.js"></script>
+
+  <!-- Tu JS (NO lo cambiamos) -->
   <script src="script.js"></script>
 
 </body>
 </html>
+
