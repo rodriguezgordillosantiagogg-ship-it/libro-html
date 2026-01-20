@@ -1,21 +1,12 @@
-$(window).on("load", function () {
+const pageFlip = new St.PageFlip(
+  document.getElementById("book"),
+  {
+    width: 400,
+    height: 500,
+    size: "fixed",
+    showCover: true,
+    mobileScrollSupport: false
+  }
+);
 
-  setTimeout(function () {
-
-    $("#book").turn({
-      width: 800,
-      height: 500,
-      autoCenter: true
-    });
-
-  }, 100);
-
-  $("#next").click(function () {
-    $("#book").turn("next");
-  });
-
-  $("#prev").click(function () {
-    $("#book").turn("previous");
-  });
-
-});
+pageFlip.loadFromHTML(document.querySelectorAll(".page"));
