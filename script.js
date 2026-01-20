@@ -20,21 +20,23 @@ function configLibro() {
 $(document).ready(function () {
   let cfg = configLibro();
 
-  // Inicializar el flipbook
-  $("#book").turn({
-    width: cfg.width,
-    height: cfg.height,
-    display: cfg.display,
-    autoCenter: true
-  });
+  if ($("#book").length) {
+    $("#book").turn({
+      width: cfg.width,
+      height: cfg.height,
+      display: cfg.display,
+      autoCenter: true
+    });
+  }
 
-  // Activar música al tocar la pantalla
   $("#activar").on("click", function () {
-    $("#musica")[0].play();
+    const audio = document.getElementById("musica");
+    if (audio) {
+      audio.play();
+    }
     $("#activar").hide();
   });
 
-  // Recalcular si se cambia el tamaño de la ventana
   $(window).on("resize", function () {
     let newCfg = configLibro();
     $("#book").turn("size", newCfg.width, newCfg.height);
