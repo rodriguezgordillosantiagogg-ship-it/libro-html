@@ -33,8 +33,7 @@ body {
   margin: auto;
   width: 100%;
   max-width: 900px; /* tamaño máximo en PC */
-  height: auto;
-  aspect-ratio: 16/10; /* mantiene proporción en móviles */
+  height: 550px;    /* altura fija en PC */
 }
 
 /* PÁGINAS */
@@ -65,7 +64,7 @@ body {
 /* Ajustes para pantallas pequeñas */
 @media (max-width: 768px) {
   #book {
-    max-width: 95%;
-    aspect-ratio: 3/4; /* proporción vertical en móviles */
+    width: 95%;
+    height: 90vh; /* ocupa el 90% de la altura de la pantalla del móvil */
   }
 }
