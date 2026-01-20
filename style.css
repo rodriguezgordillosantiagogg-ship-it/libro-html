@@ -13,14 +13,16 @@ body {
   font-family: Arial, sans-serif;
 }
 
+/* LIBRO */
 #book {
-  width: 90vw;
-  max-width: 800px;
-  height: 60vh;
-  max-height: 500px;
+  width: 800px;
+  height: 500px;
 }
 
+/* CADA PÁGINA */
 .page {
+  width: 400px;      /* 👈 LA CLAVE */
+  height: 500px;     /* 👈 LA CLAVE */
   background: white;
   border: 1px solid #ccc;
   display: flex;
@@ -29,6 +31,7 @@ body {
   font-size: 2em;
 }
 
+/* BOTONES */
 .controls {
   margin-top: 20px;
 }
@@ -38,4 +41,3 @@ button {
   font-size: 16px;
   cursor: pointer;
 }
-
